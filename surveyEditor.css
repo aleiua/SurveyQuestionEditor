@@ -5,9 +5,10 @@
 
 .listQ {
 	font-size: 20px;
+	align-content: middle;
 	font-weight: bold;
+	height: 58px;
 }
-
 
 input[type="text"] {
     height: 25px;

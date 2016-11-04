@@ -178,6 +178,7 @@ $(document).ready(function() {
         while (a.length > textFields.length) {
             addField;
         }
+
         textFields = $('tr input:text');
         selectSettings = $('tr select');
 
