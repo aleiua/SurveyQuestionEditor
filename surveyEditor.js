@@ -60,6 +60,17 @@ function getAnswers() {
     return answers;
 }
 
+// Get the answers from form's text field and return in array
+function getAnswersSettings() {
+    var selRows = $('tr .select');
+    var ansSettings = [selRows.length];
+
+    for (var i = 0; i < selRows.length; i++) {
+        ansSettings[i] = $(selRows[i]).prop('selectedIndex');
+    }
+    return ansSettings;
+}
+
 
 
 
@@ -125,6 +136,10 @@ $(document).ready(function() {
         var ans = getAnswers();
         $(question).data('answers', ans);
 
+        // Save answer respondent options to question data
+        var settings = getAnswersSettings();
+        $(question).data('settings', settings);
+
         // Save checkbox values to quesiton data
         $(question).data('none', $('.none').is(':checked'));
         $(question).data('shuffle', $('.shuffle').is(':checked'));
@@ -156,6 +171,7 @@ $(document).ready(function() {
 
         // Load answers in
         var a = $(q).data('answers');
+        var s = $(q).data('settings');
         var textFields = $('tr input:text');
 
         // Make sure there are enough textfields for the number of answers
@@ -163,11 +179,15 @@ $(document).ready(function() {
             addField;
         }
         textFields = $('tr input:text');
+        selectSettings = $('tr select');
 
         // Fill text fields with answers
         for (var i = 0; i < a.length; i++) {
             $(textFields[i]).val(a[i]);
+            $(selectSettings[i]).prop('selectedIndex', s[i]);
         }
+
+
 
         // Set checkboxes to saved values
         $('.none').prop('checked', $(q).data('none'));
