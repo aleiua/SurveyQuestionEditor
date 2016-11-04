@@ -12,3 +12,4 @@ What the user can do:
 
 
 Used Sortable plugin from https://jqueryui.com/sortable/
+(http://johnny.github.com/jquery-sortable/)
