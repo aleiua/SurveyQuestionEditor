@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!--Mobile Compatible-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Outside stye sheets-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- My stylesheet -->
+	<link rel="stylesheet" href="surveyEditor.css">
+
+	<!-- Outside Script libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- My jQuery script -->
+	<script src="surveyEditor.js"></script>
+
+
+	<title>Survey Question Editor</title>
+
+</head>
+
+<body>
+<div class="container">
+	<h2>Create and Edit Questions for a Survey</h2>
+	<button id="newQuestion" class = "btn btn-primary">New Question</button><br>
+  
+  
+  
+	<div class="question-form" data="new">
+      <label for="question"> Question:</label>
+      <br>
+      <textarea id= "question" rows="4" cols="50" ></textarea>
+      <br>
+      <label for= "ans-table">Answers:</label><br>
+      <table id="ans-table"> 
+      		<tbody>
+      			<tr>
+      				<td><input type="text"></td>
+	      			<td>
+	      				<select class="select" id="respondentOpts">
+	      					<option>May Select</option>
+	      					<option>Must Select</option>
+	      					<option>Terminate if selcted</option>
+	      				</select>
+
+	      			</td>
+	      			<td>
+	      				<input type="button" class="remove-field btn btn-default" value="x"/>
+	      			</td>
+	      			<td>
+	      				<input type="button" class="add-field btn btn-default" value="+"/>
+	      			</td>
+
+      			</tr>
+
+      		</tbody>
+
+      </table>
+
+      <br>
+    
+    <input type="checkbox" class="none"> Include "None of the above"<br>
+  	<input type="checkbox" class="shuffle"> Shuffle answer order<br><br>
+
+  
+    <button class="submit btn btn-success">Save</button>
+    <button class="cancel btn btn-default">Cancel</button>
+	</div>
+  
+
+  <div class="question-display"> 
+
+    <ul class="question-list sortable list-group">
+    </ul>
+    
+  </div>
+  
+
+</div>
+
+<script src='jquery-sortable.js'></script>
+</body>
+
+</html>

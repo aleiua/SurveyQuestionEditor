@@ -1,0 +1,65 @@
+.question-form {
+  display: none;  
+}
+
+
+.listQ {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+input[type="text"] {
+    height: 25px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+
+
+/** Buttons **/
+
+#newQuestion {
+	margin-bottom: 10px;
+}
+
+.remove-field {
+	display: none;
+}
+
+.edit {
+	display: inline-block;
+	float: right;
+	margin-right: 10px;
+	vertical-align: middle;
+
+}
+
+.delete {
+	display: inline-block;
+	float:right;
+	vertical-align: middle;
+
+}
+
+/** Sortable Styling **/
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+
